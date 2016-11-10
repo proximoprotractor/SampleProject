@@ -1,7 +1,7 @@
 /**
  * Helper functions used by different specs are defined in this class
  */
-
+// Added a line
 "use strict";
 
 function getRandomString(charLength){
