@@ -1,11 +1,6 @@
 /**
  * Helper functions used by different specs are defined in this class
  */
-// Added a line
-//Added one more line
-
-// This line is added by Harsha
-// This line is added for conflict
 
 "use strict";
 

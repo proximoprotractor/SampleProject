@@ -1,8 +1,10 @@
 "use strict";
+var exec = require('child_process').execFile;
 
 var Page1 = require('./page1.pageObject.js'),
 	Page2 = require('./page2.pageObject.js'),
-    util = require('../helpers/util.js');
+    util = require('../helpers/util.js'),
+    testData = require('../helpers/testData.json');
 	
 	describe('Dummy Test Suite', function() {
             var pag1obj, pag2obj;
@@ -28,12 +30,31 @@ var Page1 = require('./page1.pageObject.js'),
             it("Should verify that user is able to launch login page", function() {
                 browser.ignoreSynchronization = true;
 
-                browser.get("http://www.thiagofelix.com/hackynote/app/#/");
-                expect(Page1.getAllValuesFromThemeHackyDropdown()).toContain('Swiss');
 
+                browser.get("http://ng-table.com/#/");
+
+                //Page1.clickFirstRadioButton();
+                expect(Page1.getAgeBasedOnName("Christian")).toBe('aaa');
                 //browser.pause();
                 //browser.sleep(5000);
                 //expect(Page1.getTextFromParaByLastIndex()).toBe('aaa');
-                //expect(Page1.IsPresentSubmitYourAngularJSAppButton()).toBe(false);
+
             });
-});
+
+        it("CSS Value example", function() {
+
+            browser.get("https://material.angularjs.org/latest/demo/colors");
+            expect(Page1.getValueByCSS()).toBe('aaa');
+        });
+
+        fit("google log in", function() {
+            browser.ignoreSynchronization = true;
+
+
+            browser.get("http://www.gmail.com");
+
+            element(by.css("#Email")).sendKeys(testData.userInfo[1].user);
+            browser.pause();
+        });
+
+    });

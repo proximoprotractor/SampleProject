@@ -53,4 +53,48 @@ page1.prototype.getTextFromThemeHackyDropdown = function() {
     return element(by.css('.dropdown-menu')).getText();
 };
 
+page1.prototype.clickFirstCheckBox = function() {
+    return element(by.xpath("//demo-include/div/div/div/fieldset/div/div[1]/md-checkbox")).click();
+};
+
+page1.prototype.isSelectedFirstCheckBox = function() {
+    return element(by.xpath("//demo-include/div/div/div/fieldset/div/div[1]/md-checkbox")).getAttribute('aria-checked').then(function(checkboxValue){
+        console.log("Following is the checkbox value: " +checkboxValue);
+            if(checkboxValue == "true") return true;
+            else return false;
+        })
+};
+
+page1.prototype.clickFirstRadioButton = function() {
+    return element(by.css("#radio_11")).click();
+};
+
+page1.prototype.isSelectedDemoRadioButton = function() {
+    return element(by.css("#radio_11")).getAttribute("class").then(function(radioButtonValue){
+        if (radioButtonValue.indexOf("md-checked") >-1) return true;
+        else return false;
+        })
+};
+
+page1.prototype.getIndexBasedOnName = function(name) {
+    return element.all(by.xpath("//tbody/tr/td[1]")).getText().then(function(nameArr){
+        for (var i=0;i<nameArr.length;i++)
+        {
+            if(nameArr[i] == name)
+                return i;
+        }})
+};
+
+page1.prototype.getAgeBasedOnName = function(name) {
+    return element.all(by.xpath("//tbody/tr/td[2]")).get(this.getIndexBasedOnName(name)).getText().then(function(age){
+        return age;
+    })
+};
+
+page1.prototype.getValueByCSS = function(name) {
+    return element.all(by.xpath("//p")).last().getCssValue('background-color');
+
+};
+
+
 module.exports = page1;

@@ -1,0 +1,9 @@
+{
+"userInfo" : [
+{"user" : "aaa" , "pwd" : "passwordaaaaa"},
+{"user" : "bbbb" , "pwd" : "passwordbbbbb"}
+],
+"products" :{
+"food" : "sandwitches" , "personalCare" : "Hairoil"
+}
+}

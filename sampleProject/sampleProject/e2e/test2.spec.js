@@ -1,5 +1,5 @@
 "use strict";
-// Dummy Text
+
 var Page1 = require('./page1.pageObject.js'),
 	Page2 = require('./page2.pageObject.js');
 	
