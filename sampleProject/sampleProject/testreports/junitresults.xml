@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+ <testsuite name="Dummy Test Suite" timestamp="2016-11-16T21:50:58" hostname="localhost" time="3.474" errors="0" tests="3" skipped="0" failures="0">
+  <testcase classname="Dummy Test Suite" name="google log in" time="2.104">
+  </testcase>
+  <testcase classname="Dummy Test Suite" name="Should verify that user is able to launch login page" time="0.001">
+  </testcase>
+  <testcase classname="Dummy Test Suite" name="CSS Value example" time="0">
+  </testcase>
+ </testsuite>
+</testsuites>
