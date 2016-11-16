@@ -1,3 +1,4 @@
+var jasmineReporters = require('jasmine-reporters');
 exports.config = {
     seleniumAddress: 'http://localhost:4444/wd/hub',
     allScriptsTimeout: 7200000,
@@ -34,7 +35,14 @@ exports.config = {
     params: {
         username: 'WiproTraining',
 		password: 'bbb'
+    },
 
+    onPrepare: function () {
+        jasmine.getEnv().addReporter(new jasmineReporters.JUnitXmlReporter({
+            savePath: 'testreports',
+            consolidate: true,
+            useDotNotation: true
+        }));
     }
 
 };

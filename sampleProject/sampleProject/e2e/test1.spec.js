@@ -54,7 +54,7 @@ var Page1 = require('./page1.pageObject.js'),
             browser.get("http://www.gmail.com");
 
             element(by.css("#Email")).sendKeys(testData.userInfo[1].user);
-            //browser.pause();
+           
         });
 
     });
