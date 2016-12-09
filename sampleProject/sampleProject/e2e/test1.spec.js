@@ -10,6 +10,7 @@ var Page1 = require('./page1.pageObject.js'),
             var pag1obj, pag2obj;
 
             beforeAll(function() {
+                console.log("This is Praveena's project")
                 Page1 = new Page1();
                 Page2 = new Page2();
                 console.log("We are in Before All");
